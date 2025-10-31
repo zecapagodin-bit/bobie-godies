@@ -1,115 +1,95 @@
-
 <html lang="pt-BR">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" 
           content="width=device-width, initial-scale=1.0">
-
+    
     <title>Jogo de Adivinhação - IFG 2º Áudio e Vídeo</title>
-
     <style>
 
-      .corpo_da_pagina {
- 	        font-family: Arial, sans-serif;
+      .corpoDaPagina {
+          font-family: Arial, sans-serif;
           display: flex;
           justify-content: center;
           align-items: center;
           height: 100vh;
-          background-color: #1e1e2f;
+          background-color: #f4f4f4;
           margin: 0;
-
       }
 
-      .container {
+      .container{
         text-align: center;
-        background-color: #2f2f3d; 
+        background-color: #ffffff;
         padding: 20px;
         border-radius: 10px;
-        box-shadow: 0px 6px 16px rgba(0, 0, 0, 0.5);
+        box-shadow: 0px 0px 10px rgba(145, 31, 0, 0.4);
       }
 
-      button {
-        padding: 10px 20px;
-        border: none;
-        font-size: 20px;
-        cursor: pointer;
-        border-radius: 10px;
-        color: #ffffff;
-        background-color: #7f5af0;
-         transition: background-color 0.3s ease;
-      }
-
-      button:hover { 
-        background-color: #6a49cc; 
-      }
-
-      h1 {
-        color: #f0f0f0;  
-      }
-
-      p {
-          color: #cccccc;  
-          margin-bottom: 20px; 
+      h1{
+        color: #333
       }
 
       input[type="number"]{
         padding: 10px;
         font-size: 16px;
-        width: 80px;
-        margin-bottom:10px;
-        background-color: #1e1e2f;
-        color: #f0f0f0;
-        border: 1px solid #444;
+        width: 100px;
+        margin-bottom: 10px;
+      }
 
+
+      button {
+        padding: 10px 20px;
+        border: none;
+        font-size: 16px;
+        cursor: pointer;
+        border-radius: 5px;
+        color: #ffffff;
+        background-color: #28a745;
       }
 
     </style>
-
   </head>
-  <body class="corpo_da_pagina">
 
+  <body class="corpoDaPagina" >
+     
     <div class="container">
-
       <h1>Jogo de Adivinhação</h1>
       <p>Tente adivinhar o número secreto entre 1 e 100</p>
 
-
       <input type="number" id="NMPalpite" min="1" max="100"/>
-      <button id="BTNAdvinhar" 
-      onmouseover="escurecerBotao()"
-      onmouseout="voltarCorOriginalBotao()"
-      onclick="verificarPalpite()"> 
-      Advinhar 
-    </button>
 
+      <button id="BTNAdivinhar" 
+              onmouseover="escurecerBotao()"
+              onmouseout="voltarCorOriginalBotao()"
+              onclick="verificarPalpite()"> 
+              Adivinhar 
+      </button>
     </div>
-
-
     <script>
-    function voltarCorOriginalBotao(){
-       var botao_adivinhar = document.getElementById('BTNAdvinhar'); 
-       botao_adivinhar.style.backgroundColor = "#7f5af0"
-    }
+      function voltarCorOriginalBotao(){
+        var botao_adivinhar = document.getElementById('BTNAdivinhar');
+        botao_adivinhar.style.backgroundColor = '#28a745';
+      }
 
-    function escurecerBotao(){
-    var botao_adivinhar = document.getElementById('BTNAdvinhar'); 
-    botao_adivinhar.style.backgroundColor = "#6a49cc"
-    }
+      function escurecerBotao(){
+        var botao_adivinhar = document.getElementById('BTNAdivinhar');
+        botao_adivinhar.style.backgroundColor = '#F5DD27';
+      }
 
-let numeroSecreto = Math.floor ( Math.random() * 100) + 1;
 
-  function verificarPalpite(){
-    var caixa_texto = document.getElementById('NMPalpite');
-    var chuteDoJogador = parseInt(caixa_texto.value);
-    // alert(caixa_texto.value),
-    alert(numeroSecreto);
-}
-      
+      let  numeroSecreto = Math.floor( Math.random() * 100 ) + 1;
 
-      
-      
-      </script>
+      function verificarPalpite(){
+         var caixa_texto = document.getElementById('NMPalpite');
+         var chuteDoJogador = parseInt(caixa_texto.value);
+         
+         if(chuteDoJogador == numeroSecreto){
+           alert("Você acertou!");
+         }
+          alert(numeroSecreto);
+      }
+
+    </script>
     
-
-  </body>      
+  </body>
 </html>

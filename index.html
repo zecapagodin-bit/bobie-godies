@@ -107,12 +107,18 @@ if(chuteDoJogador < 1){
    div_mensagem.textContent = "Por favor, insira um número válido entre 1 e 100.";
    return;
 }
+
+qtdTentativas = qtqTentativas -1;
+
          if(chuteDoJogador == numeroSecreto){
            div_mensagem.textContent = "Você acertou!";
          }else{ 
           div_mensagem.textContent = "Você errou!";
          }
-          alert(numeroSecreto);
+        
+         if (qtdTentativas == 0){
+          div_mensagem.textContent = "Fim de jogo! O número era "+numeroSecreto;
+         }
       }
 
     </script>

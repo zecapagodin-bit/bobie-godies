@@ -73,6 +73,12 @@
 
     </div>
     <script>
+
+function desabilitarJogo(){
+   var botao_adivinhar = document.getElementById('BTNAdivinhar');
+   botao_adivinhar.disabled = true;
+}
+
       function voltarCorOriginalBotao(){
         var botao_adivinhar = document.getElementById('BTNAdivinhar');
         botao_adivinhar.style.backgroundColor = '#28a745';
@@ -117,6 +123,7 @@ qtdTentativas = qtdTentativas -1;
          }
         
          if (qtdTentativas == 0){
+          desabilitarJogo();
           div_mensagem.textContent = "Fim de jogo! O número era "+numeroSecreto;
          }
       }

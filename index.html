@@ -78,6 +78,7 @@ function desabilitarJogo(){
    var botao_adivinhar = document.getElementById('BTNAdivinhar');
    botao_adivinhar.disabled = true;
    botao_adivinhar.style.backgroundColor = '#DCDCDC';
+   caixa_texto.disabled = true;
 }
 
       function voltarCorOriginalBotao(){
@@ -90,7 +91,8 @@ function desabilitarJogo(){
       function escurecerBotao(){
         var botao_adivinhar = document.getElementById('BTNAdivinhar');
         if(botao_adivinhar.disabled == false){
-        botao_adivinhar.style.backgroundColor = '#F5DD27';}
+        botao_adivinhar.style.backgroundColor = '#F5DD27';
+         }
       }
 
 
